@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Event registration</h1>
+    </header>
+
+    <nav>
+       <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="registration.html">Register</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Student registration</h2>
+        <form onsubmit="registerstudent(event)">
+            <label>Name:</label>
+            <input type="text" id="name" required placeholder="Name">
+            <label>Email:</label>
+            <input type="email" required placeholder="email">
+            <label>Department:</label>
+            <input type="text" required placeholder="department">
+            <label name="event">select event:</label>
+            <select name="event" id="event" required>
+                <option value="">select event</option>
+                <option>web development workshop</option>
+                <option>quiz competition</option>
+                <option>coding competition</option>
+            </select>
+            <button type="submit">register</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        function registerstudent(event)
+        {
+            event.preventDefault();
+            let name=document.getElementById("name").value;
+            let eventname=document.getElementById("event").value;
+            document.getElementById("message").innerHTML=
+            "successfully registered!<br>"+
+            "welcome"+name+".<br>"+
+            "event:"+eventname;
+            document.getElementById("message").style.display="block";
+        }
+    </script>
+</body>
+</html>
